@@ -114,7 +114,7 @@ func parseFlags(pos int, commands []Command) {
 		if command.Switch == os.Args[pos] {
 			var ctx = Context{}
 
-			if len(os.Args) > pos+1 && os.Args[pos+1] == "help" || os.Args[pos+1] == "-h" {
+			if len(os.Args) > pos+1 && (os.Args[pos+1] == "help" || os.Args[pos+1] == "-h") {
 				fmt.Println("Usage: ")
 				for _, cmd := range command.Commands {
 					fmt.Println(cmd.getHelp())
